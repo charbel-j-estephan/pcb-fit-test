@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-22T08:42:34.651Z",
+        "reason": "Claude's triage: the flagged wrapper is the .seg segmented control, whose segments fill the 1px border by design; each segment carries its own 6px 14px padding"
+      }
+    ]
+  }
+}

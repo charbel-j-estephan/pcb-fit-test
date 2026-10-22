@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PCB Fit-Test Print</title>
+  <meta name="description" content="Turn Gerber and drill files into a 3D-printable board to test-fit your components before ordering the PCB. Runs entirely in your browser.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='6' width='26' height='20' fill='%231d5c40'/%3E%3Ccircle cx='10' cy='16' r='3' fill='%23c8873a'/%3E%3Ccircle cx='22' cy='16' r='3' fill='%23c8873a'/%3E%3Cpath d='M13 16h6' stroke='%23c8873a' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,600;125,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="26" height="20"/><circle cx="10" cy="16" r="3"/><circle cx="22" cy="16" r="3"/><path d="M13 16h6"/></svg>
+      <h1>PCB fit-test print</h1>
+    </div>
+    <p class="tagline">Gerber + drill files in, a printable board out. Push your real parts into it before you order.</p>
+    <p class="privacy">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 7V5a4 4 0 0 1 8 0v2M3 7h10v7H3z"/></svg>
+      Files stay in this browser
+    </p>
+  </header>
+
+  <main class="layout">
+    <aside class="panel" aria-label="Settings">
+
+      <section class="block" id="files-block">
+        <div class="block-head">
+          <h2>Files</h2>
+          <button type="button" class="link" id="clear-files" hidden>Clear</button>
+        </div>
+        <label class="drop" id="drop">
+          <input type="file" id="file-input" multiple>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5M4 14v6h16v-6"/></svg>
+          <span class="drop-main">Drop a ZIP or Gerber + drill files</span>
+          <span class="drop-sub">or click to choose · KiCad, EasyEDA, Eagle, Altium</span>
+        </label>
+        <p class="demo-line">No files at hand? <button type="button" class="link" id="demo">Try an Arduino Uno</button><span class="credit">Uno Rev3 design by Arduino, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener" target="_blank">CC BY-SA</a></span></p>
+        <details class="layers-wrap" id="layers-wrap" hidden>
+          <summary><span id="layers-summary"></span><span class="summary-action">Edit roles</span></summary>
+          <table class="layers" id="layers">
+            <thead><tr><th scope="col">File</th><th scope="col">Used as</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </details>
+      </section>
+
+      <section class="block">
+        <div class="block-head"><h2>Printer</h2></div>
+        <div class="field">
+          <label for="printer">Model</label>
+          <select id="printer"></select>
+        </div>
+        <div class="field-row" id="custom-bed" hidden>
+          <div class="field"><label for="bed-x">Bed X</label><div class="unit"><input id="bed-x" type="number" min="50" max="1000" step="1" value="220"><span>mm</span></div></div>
+          <div class="field"><label for="bed-y">Bed Y</label><div class="unit"><input id="bed-y" type="number" min="50" max="1000" step="1" value="220"><span>mm</span></div></div>
+        </div>
+        <fieldset class="field">
+          <legend>Multi-material unit <span class="hint">AMS, CFS, MMU…</span></legend>
+          <div class="seg" role="radiogroup" id="mmu">
+            <label><input type="radio" name="mmu" value="0" checked><span>No, one nozzle</span></label>
+            <label><input type="radio" name="mmu" value="1"><span>Yes</span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="block">
+        <div class="block-head"><h2>Colours</h2></div>
+        <fieldset class="field">
+          <legend>Filaments</legend>
+          <div class="seg" role="radiogroup" id="color-count">
+            <label><input type="radio" name="colors" value="1"><span>1</span></label>
+            <label><input type="radio" name="colors" value="2" checked><span>2</span></label>
+            <label><input type="radio" name="colors" value="3"><span>3</span></label>
+          </div>
+        </fieldset>
+        <div class="slots" id="slots"></div>
+        <table class="assign" id="assign">
+          <thead><tr><th scope="col">Feature</th><th scope="col">Filament</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="note" id="assign-note"></p>
+      </section>
+
+      <details class="block advanced">
+        <summary><h2>Dimensions</h2><span class="summary-val" id="adv-summary"></span></summary>
+        <div class="field-row">
+          <div class="field"><label for="thickness">Board thickness</label><div class="unit"><input id="thickness" type="number" min="0.4" max="5" step="0.2" value="1.6"><span>mm</span></div></div>
+          <div class="field"><label for="layer">Layer height</label><div class="unit"><input id="layer" type="number" min="0.08" max="0.32" step="0.04" value="0.2"><span>mm</span></div></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="relief">Copper relief</label><div class="unit"><input id="relief" type="number" min="0.1" max="2" step="0.2" value="0.4"><span>mm</span></div></div>
+          <div class="field"><label for="comp">Hole oversize</label><div class="unit"><input id="comp" type="number" min="0" max="1" step="0.05" value="0.3"><span>mm</span></div></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="min-drill">Skip holes under</label><div class="unit"><input id="min-drill" type="number" min="0" max="3" step="0.1" value="0.5"><span>mm</span></div></div>
+          <p class="note tight">Vias are skipped; plated holes print at drill size + oversize, because FDM holes shrink.</p>
+        </div>
+      </details>
+
+      <section class="block output" id="output" hidden>
+        <div class="block-head"><h2>Print</h2></div>
+        <ul class="warnings" id="warnings"></ul>
+        <div id="changes"></div>
+        <div id="drills"></div>
+        <div class="downloads" id="downloads"></div>
+      </section>
+      <div class="dock" id="dock" hidden></div>
+    </aside>
+
+    <section class="stage" aria-labelledby="stage-title">
+      <h2 class="visually-hidden" id="stage-title">3D preview</h2>
+      <div class="canvas-wrap">
+        <div class="viewport" id="viewport"></div>
+        <div class="view-tools" role="toolbar" aria-label="View">
+          <button type="button" data-view="iso" aria-pressed="true">3D</button>
+          <button type="button" data-view="top" aria-pressed="false">Top</button>
+          <button type="button" data-view="bottom" aria-pressed="false">Bottom</button>
+        </div>
+        <div class="empty" id="empty">
+          <p class="empty-main"><span class="pointer-fine">Drop your board files anywhere</span><span class="pointer-touch">Choose your board files below</span></p>
+          <p class="empty-sub">A ZIP from your fab-house export works best: outline, copper, mask, silkscreen and drill files together.</p>
+        </div>
+        <dl class="titleblock" id="titleblock" hidden></dl>
+        <div class="busy" id="busy" hidden><span></span>Building model</div>
+      </div>
+      <div class="section-view" id="section-view" hidden></div>
+    </section>
+  </main>
+  <div class="dropveil" id="dropveil" hidden><p>Drop to load files</p></div>
+</body>
+</html>

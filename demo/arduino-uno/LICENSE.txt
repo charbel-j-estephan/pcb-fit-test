@@ -1,0 +1,4 @@
+Arduino Uno Rev3 reference design Gerber files.
+Source: Arduino (https://www.arduino.cc/en/Main/FAQ), via the @tracespace/fixtures package.
+Licensed under Creative Commons Attribution-ShareAlike (CC BY-SA).
+Arduino is a trademark of Arduino SA. Used here only as demonstration input.

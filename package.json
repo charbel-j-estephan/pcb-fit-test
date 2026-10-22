@@ -1,0 +1,19 @@
+{
+  "name": "pcb-fit-test",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Turn Gerber + drill files into a 3D-printable STL to fit-test components before ordering a PCB",
+  "scripts": {
+    "test": "node test/run.js",
+    "serve": "python -m http.server 8080"
+  },
+  "dependencies": {
+    "clipper-lib": "6.4.2",
+    "jszip": "3.10.1",
+    "libtess": "1.2.2"
+  },
+  "devDependencies": {
+    "@tracespace/fixtures": "4.2.7"
+  }
+}
