@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T11:09:36+00:00",
+  "title": "Design System: PCB fit-test print",
+  "extensions": {
+    "colorMeta": {
+      "copper": {
+        "role": "primary",
+        "displayName": "Copper",
+        "canonical": "#a8561d",
+        "cssVar": "--accent",
+        "dark": "#df8a4c",
+        "tonalRamp": [
+          "#41210b",
+          "#6d3813",
+          "#984e1a",
+          "#c46422",
+          "#df8648",
+          "#e8a97d",
+          "#f2ceb5",
+          "#fbf1e9"
+        ]
+      },
+      "copper-ink": {
+        "role": "primary",
+        "displayName": "Copper Ink",
+        "canonical": "#ffffff",
+        "cssVar": "--accent-ink",
+        "dark": "#1a0f06",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#595959",
+          "#737373",
+          "#949494",
+          "#b2b2b2",
+          "#d4d4d4",
+          "#f2f2f2"
+        ]
+      },
+      "drafting-film": {
+        "role": "neutral",
+        "displayName": "Drafting Film",
+        "canonical": "#eef1ed",
+        "cssVar": "--ground",
+        "dark": "#141917",
+        "tonalRamp": [
+          "#242b21",
+          "#3c4838",
+          "#54644e",
+          "#6c8164",
+          "#8da187",
+          "#aebca9",
+          "#d1d9ce",
+          "#f1f4f1"
+        ]
+      },
+      "drafting-film-shade": {
+        "role": "neutral",
+        "displayName": "Film Shade",
+        "canonical": "#e4e8e3",
+        "cssVar": "--ground-2",
+        "dark": "#1b211e",
+        "tonalRamp": [
+          "#242a22",
+          "#3c4639",
+          "#546250",
+          "#6c7e67",
+          "#8e9e89",
+          "#aebaab",
+          "#d1d8cf",
+          "#f2f3f1"
+        ]
+      },
+      "field-white": {
+        "role": "neutral",
+        "displayName": "Field White",
+        "canonical": "#f8faf7",
+        "cssVar": "--field",
+        "dark": "#101513",
+        "tonalRamp": [
+          "#232f1d",
+          "#3b4e31",
+          "#526e45",
+          "#6a8d58",
+          "#8cad7b",
+          "#adc4a1",
+          "#d0deca",
+          "#f1f5ef"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#17201c",
+        "cssVar": "--ink",
+        "dark": "#e3e9e5",
+        "tonalRamp": [
+          "#202d27",
+          "#354a41",
+          "#4b685b",
+          "#608675",
+          "#82a596",
+          "#a6bfb4",
+          "#cddbd4",
+          "#f0f4f2"
+        ]
+      },
+      "graphite-2": {
+        "role": "neutral",
+        "displayName": "Graphite 2",
+        "canonical": "#4b5751",
+        "cssVar": "--ink-2",
+        "dark": "#aab5ae",
+        "tonalRamp": [
+          "#232926",
+          "#3b4440",
+          "#536059",
+          "#6a7b73",
+          "#8c9c94",
+          "#adb8b2",
+          "#d0d7d4",
+          "#f1f3f2"
+        ]
+      },
+      "graphite-3": {
+        "role": "neutral",
+        "displayName": "Graphite 3",
+        "canonical": "#5c6660",
+        "cssVar": "--ink-3",
+        "dark": "#87938c",
+        "tonalRamp": [
+          "#242826",
+          "#3c433f",
+          "#555e58",
+          "#6d7972",
+          "#8e9993",
+          "#afb6b2",
+          "#d1d6d3",
+          "#f2f3f2"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#c5ccc6",
+        "cssVar": "--rule",
+        "dark": "#2e3833",
+        "tonalRamp": [
+          "#242924",
+          "#3c443d",
+          "#545f55",
+          "#6b7a6d",
+          "#8d9b8f",
+          "#aeb7af",
+          "#d1d6d2",
+          "#f1f3f2"
+        ]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "#8f9a93",
+        "cssVar": "--rule-strong",
+        "dark": "#52605a",
+        "tonalRamp": [
+          "#242826",
+          "#3c433f",
+          "#555e58",
+          "#6d7971",
+          "#8e9992",
+          "#afb6b1",
+          "#d1d6d3",
+          "#f2f3f2"
+        ]
+      },
+      "ochre-warn": {
+        "role": "neutral",
+        "displayName": "Ochre Warn",
+        "canonical": "#8a5a00",
+        "cssVar": "--warn",
+        "dark": "#e7b85c",
+        "tonalRamp": [
+          "#4c3200",
+          "#805300",
+          "#b27400",
+          "#e69600",
+          "#ffb429",
+          "#ffca66",
+          "#ffe1a8",
+          "#fff6e5"
+        ]
+      },
+      "ochre-warn-bg": {
+        "role": "neutral",
+        "displayName": "Ochre Warn Bg",
+        "canonical": "#f6ecd2",
+        "cssVar": "--warn-bg",
+        "dark": "#2f2612",
+        "tonalRamp": [
+          "#40320d",
+          "#6a5315",
+          "#95741e",
+          "#bf9526",
+          "#dbb44c",
+          "#e6c97f",
+          "#f1e0b7",
+          "#fbf6ea"
+        ]
+      },
+      "soldermask": {
+        "role": "neutral",
+        "displayName": "Soldermask",
+        "canonical": "#10221b",
+        "cssVar": "--stage",
+        "dark": "#0b1712",
+        "tonalRamp": [
+          "#183429",
+          "#295745",
+          "#397960",
+          "#499c7c",
+          "#6dba9c",
+          "#97ceb9",
+          "#c4e3d7",
+          "#eef7f3"
+        ]
+      },
+      "soldermask-ink": {
+        "role": "neutral",
+        "displayName": "Soldermask Ink",
+        "canonical": "#d6e4dc",
+        "cssVar": "--stage-ink",
+        "dark": "#d6e4dc",
+        "tonalRamp": [
+          "#1e2e25",
+          "#334d3e",
+          "#476c57",
+          "#5b8a6f",
+          "#7eaa91",
+          "#a3c2b0",
+          "#cbddd2",
+          "#f0f5f2"
+        ]
+      },
+      "soldermask-ink-2": {
+        "role": "neutral",
+        "displayName": "Soldermask Ink 2",
+        "canonical": "#8ea89a",
+        "cssVar": "--stage-ink-2",
+        "dark": "#8ea89a",
+        "tonalRamp": [
+          "#212b26",
+          "#37483f",
+          "#4e6558",
+          "#648272",
+          "#86a293",
+          "#a9bcb2",
+          "#ced9d3",
+          "#f1f4f2"
+        ]
+      },
+      "soldermask-rule": {
+        "role": "neutral",
+        "displayName": "Soldermask Rule",
+        "canonical": "#2b4a3d",
+        "cssVar": "--stage-rule",
+        "dark": "#2b4a3d",
+        "tonalRamp": [
+          "#1c3028",
+          "#2f5142",
+          "#42715d",
+          "#549178",
+          "#78b098",
+          "#9ec7b6",
+          "#c8dfd6",
+          "#eff6f3"
+        ]
+      },
+      "stage-copper": {
+        "role": "secondary",
+        "displayName": "Stage Copper",
+        "canonical": "#e9a26a",
+        "cssVar": null,
+        "dark": "#e9a26a",
+        "tonalRamp": [
+          "#43230a",
+          "#6f3a10",
+          "#9c5117",
+          "#c8691e",
+          "#e38b44",
+          "#ebac7a",
+          "#f4d0b3",
+          "#fcf1e9"
+        ],
+        "note": "Literal in style.css (no custom property); same value in both themes."
+      }
+    },
+    "themes": {
+      "dark": {
+        "trigger": "prefers-color-scheme: dark (unless data-theme=light), or :root[data-theme=dark]",
+        "note": "Stage inks and stage rule are not re-mapped; only --stage deepens. The stage stays dark in both themes.",
+        "overrides": {
+          "--accent": "#df8a4c",
+          "--accent-ink": "#1a0f06",
+          "--ground": "#141917",
+          "--ground-2": "#1b211e",
+          "--field": "#101513",
+          "--ink": "#e3e9e5",
+          "--ink-2": "#aab5ae",
+          "--ink-3": "#87938c",
+          "--rule": "#2e3833",
+          "--rule-strong": "#52605a",
+          "--warn": "#e7b85c",
+          "--warn-bg": "#2f2612",
+          "--stage": "#0b1712"
+        }
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display (wide)",
+        "purpose": "Archivo 600 at wdth 125: brand (17px), title-block title and section heading (13px), empty-stage line (18px). Only at 600."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Panel section headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text and controls; 500 for control labels."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels (500, graphite-2); notes and hints at 400 in graphite-3."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Table headers, button meta, title-block rows, unit suffixes."
+      },
+      "measure": {
+        "displayName": "Measure",
+        "purpose": "JetBrains Mono tabular, only for measured numbers, filenames and Z heights (13px tables, 12px filenames, 11px Z ticks)."
+      }
+    },
+    "shadows": [],
+    "strokes": [
+      {
+        "name": "hairline",
+        "value": "1px solid var(--rule)",
+        "purpose": "Internal division: sections, table rows, segment dividers."
+      },
+      {
+        "name": "hairline-strong",
+        "value": "1px solid var(--rule-strong)",
+        "purpose": "Structural edges and control borders."
+      },
+      {
+        "name": "focus",
+        "value": "outline: 2px solid var(--accent); outline-offset: 2px",
+        "purpose": "Global focus ring (1px offset inside segmented controls)."
+      },
+      {
+        "name": "drop-veil",
+        "value": "3px solid var(--accent)",
+        "purpose": "Full-window frame while a file is dragged over the page."
+      },
+      {
+        "name": "change-line",
+        "value": "stroke: #e9a26a; stroke-dasharray: 3 2",
+        "purpose": "Filament-change height in the section band."
+      }
+    ],
+    "motion": [
+      {
+        "name": "spinner",
+        "value": "rotate(360deg) .8s linear infinite",
+        "purpose": "Busy indicator on the stage."
+      },
+      {
+        "name": "chevron",
+        "value": "transform .15s ease-out",
+        "purpose": "Advanced disclosure chevron rotation."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition: none; animation-duration: 0s",
+        "purpose": "prefers-reduced-motion removes all motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "topbar",
+        "value": "max-width: 1100px",
+        "purpose": "Tagline hidden."
+      },
+      {
+        "name": "stack",
+        "value": "max-width: 820px",
+        "purpose": "Stage first, canvas 52vh, title block static below canvas, dock fixed to screen."
+      },
+      {
+        "name": "slot-labels",
+        "value": "max-width: 400px",
+        "purpose": "Slot labels drop the word Filament."
+      },
+      {
+        "name": "short-window",
+        "value": "min-width: 821px and max-height: 720px",
+        "purpose": "Compact title block, section band and view tools."
+      },
+      {
+        "name": "stage-container",
+        "value": "@container (max-width: 680px) on .stage",
+        "purpose": "Section band heading moves above the drawing."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one copper action per output (3MF or single STL), repeated in the dock.",
+      "html": "<button class=\"ds-btn ds-btn-primary\"><span>3MF, parts assembled</span><small>for any slicer</small></button>",
+      "css": ".ds-btn{display:flex;align-items:center;justify-content:space-between;gap:10px;width:280px;height:36px;padding:0 12px;border:1px solid var(--rule-strong);border-radius:2px;background:var(--field);color:var(--ink);font:500 14px/1.45 var(--sans);cursor:pointer;text-align:left}.ds-btn small{font-weight:400;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}.ds-btn-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}.ds-btn-primary small{color:inherit;opacity:.85}.ds-btn-primary:hover{filter:brightness(1.08)}.ds-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.ds-btn:disabled{opacity:.5;cursor:progress}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Download rows: label left, size right, filament chip before the label.",
+      "html": "<button class=\"ds-btn2\"><span class=\"ds-btn2-l\"><i class=\"ds-chip\" style=\"background:#2e7d4f\"></i>Filament 1 · board</span><small>412 KB</small></button>",
+      "css": ".ds-btn2{display:flex;align-items:center;justify-content:space-between;gap:10px;width:280px;height:36px;padding:0 12px;border:1px solid var(--rule-strong);border-radius:2px;background:var(--field);color:var(--ink);font:500 14px/1.45 var(--sans);cursor:pointer}.ds-btn2:hover{border-color:var(--ink)}.ds-btn2:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.ds-btn2-l{display:flex;align-items:center;gap:8px}.ds-btn2 small{font-weight:400;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}.ds-chip{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.3);display:inline-block}"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "custom",
+      "refersTo": "segmented-option",
+      "description": "Primary choice control; the checked option inverts to graphite.",
+      "html": "<div class=\"ds-seg\" role=\"radiogroup\"><label><input type=\"radio\" name=\"ds-n\" checked><span>No, one nozzle</span></label><label><input type=\"radio\" name=\"ds-n\"><span>Yes</span></label></div>",
+      "css": ".ds-seg{display:flex;width:fit-content;border:1px solid var(--rule-strong);border-radius:2px;font:500 14px/1.45 var(--sans);color:var(--ink)}.ds-seg label{position:relative}.ds-seg input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}.ds-seg span{display:block;padding:6px 14px;border-right:1px solid var(--rule);cursor:pointer;white-space:nowrap}.ds-seg label:last-child span{border-right:0}.ds-seg input:checked+span{background:var(--ink);color:var(--ground)}.ds-seg label:hover input:not(:checked)+span{background:var(--ground-2)}.ds-seg input:focus-visible+span{outline:2px solid var(--accent);outline-offset:1px}"
+    },
+    {
+      "name": "Unit Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Numeric field in mono with a joined unit suffix.",
+      "html": "<div class=\"ds-unit\"><input type=\"number\" value=\"0.20\" step=\"0.01\"><span>mm</span></div>",
+      "css": ".ds-unit{display:flex;width:160px}.ds-unit input{flex:1;min-width:0;height:32px;padding:0 8px;border:1px solid var(--rule-strong);border-right:0;border-radius:2px 0 0 2px;background:var(--field);color:var(--ink);font:400 14px var(--mono);font-variant-numeric:tabular-nums}.ds-unit input:hover{border-color:var(--ink-2)}.ds-unit input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.ds-unit span{display:grid;place-items:center;padding:0 8px;border:1px solid var(--rule-strong);border-radius:0 2px 2px 0;background:var(--ground-2);color:var(--ink-3);font:12px var(--sans)}"
+    },
+    {
+      "name": "Link",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Copper underlined text action (Clear, Edit roles, All downloads).",
+      "html": "<button class=\"ds-link\">Edit roles</button>",
+      "css": ".ds-link{background:none;border:0;padding:0;color:var(--accent);font:14px var(--sans);text-decoration:underline;text-underline-offset:3px;cursor:pointer}.ds-link:hover{text-decoration-thickness:2px}.ds-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}"
+    },
+    {
+      "name": "Filament Chip",
+      "kind": "chip",
+      "refersTo": "filament-chip",
+      "description": "Round swatch of the user's filament colour wherever a filament is named.",
+      "html": "<span class=\"ds-chips\"><i class=\"ds-fc\" style=\"background:#2e7d4f\"></i><i class=\"ds-fc\" style=\"background:#c8873a\"></i><i class=\"ds-fc\" style=\"background:#f1f1ec\"></i></span>",
+      "css": ".ds-chips{display:inline-flex;gap:8px}.ds-fc{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.3);display:inline-block}"
+    },
+    {
+      "name": "View Tools",
+      "kind": "nav",
+      "refersTo": "view-tool",
+      "description": "Stage camera presets, top-left on the soldermask stage.",
+      "html": "<div class=\"ds-stagebg\"><div class=\"ds-vt\"><button aria-pressed=\"true\">3D</button><button aria-pressed=\"false\">Top</button><button aria-pressed=\"false\">Bottom</button></div></div>",
+      "css": ".ds-stagebg{background:var(--stage);padding:14px}.ds-vt{display:inline-flex;border:1px solid var(--stage-rule);border-radius:2px;background:rgba(11,23,18,.7)}.ds-vt button{background:none;border:0;border-right:1px solid var(--stage-rule);color:var(--stage-ink-2);padding:6px 12px;font:500 14px var(--sans);cursor:pointer}.ds-vt button:last-child{border-right:0}.ds-vt button:hover{color:var(--stage-ink)}.ds-vt button[aria-pressed=true]{background:var(--stage-ink);color:var(--stage)}.ds-vt button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}"
+    },
+    {
+      "name": "Title Block",
+      "kind": "card",
+      "refersTo": "title-block",
+      "description": "Drawing title block: board name, measured size, height, holes, filaments, bed fit.",
+      "html": "<div class=\"ds-stagebg\"><dl class=\"ds-tb\"><div><dt class=\"ds-tb-t\">arduino-uno</dt></div><div><dt>Size</dt><dd><span class=\"ds-n\">68.58 × 53.34</span> mm</dd></div><div><dt>Height</dt><dd><span class=\"ds-n\">2.40</span> mm</dd></div><div><dt>Holes</dt><dd><span class=\"ds-n\">169</span></dd></div></dl></div>",
+      "css": ".ds-stagebg{background:var(--stage);padding:14px}.ds-tb{display:grid;grid-template-columns:auto auto;min-width:250px;width:fit-content;margin:0;border:1px solid var(--stage-ink-2);background:rgba(11,23,18,.82);font:12px var(--sans)}.ds-tb>div{display:contents}.ds-tb dt,.ds-tb dd{margin:0;padding:5px 9px;border-bottom:1px solid var(--stage-rule)}.ds-tb dt{color:var(--stage-ink-2);border-right:1px solid var(--stage-rule)}.ds-tb dd{color:var(--stage-ink);text-align:right}.ds-tb>div:last-child dt,.ds-tb>div:last-child dd{border-bottom:0}.ds-tb .ds-tb-t{grid-column:1/-1;border-right:0;color:var(--stage-ink);font-weight:600;font-size:13px;font-variation-settings:'wdth' 125}.ds-n{font-family:var(--mono);font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Section Band",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "To-scale Z section of the print with dashed stage-copper filament-change lines.",
+      "html": "<div class=\"ds-sv\"><div class=\"ds-sv-h\"><h3>Section <span>Z in mm</span></h3><p>Dashed: change filament at the start of layer L.</p></div><svg width=\"260\" height=\"110\" viewBox=\"0 -4 260 110\"><text x=\"60\" y=\"4\" text-anchor=\"end\">2.40</text><text class=\"c\" x=\"60\" y=\"20\" text-anchor=\"end\">L11 · 2.00</text><text x=\"60\" y=\"104\" text-anchor=\"end\">0.00</text><rect x=\"70\" y=\"0\" width=\"50\" height=\"16\" fill=\"#f1f1ec\"/><rect x=\"70\" y=\"16\" width=\"50\" height=\"20\" fill=\"#c8873a\"/><rect x=\"70\" y=\"36\" width=\"50\" height=\"64\" fill=\"#2e7d4f\"/><line class=\"chg\" x1=\"66\" x2=\"124\" y1=\"16\" y2=\"16\"/><text class=\"l\" x=\"132\" y=\"12\">Filament 3 · pads</text><text class=\"l\" x=\"132\" y=\"30\">Filament 2 · traces</text><text class=\"l\" x=\"132\" y=\"72\">Filament 1 · board</text></svg></div>",
+      "css": ".ds-sv{display:flex;align-items:center;gap:28px;padding:12px 16px;background:var(--stage);border-top:1px solid var(--stage-rule);color:var(--stage-ink);font:12px var(--sans)}.ds-sv-h{width:22ch;flex:none}.ds-sv h3{margin:0 0 6px;font-size:13px;font-weight:600;font-variation-settings:'wdth' 125}.ds-sv h3 span{margin-left:6px;font-weight:400;font-size:12px;color:var(--stage-ink-2);font-variation-settings:'wdth' 100}.ds-sv p{margin:0;color:var(--stage-ink-2)}.ds-sv svg{overflow:visible}.ds-sv text{font:11px var(--mono);fill:var(--stage-ink-2)}.ds-sv text.l{font:12px var(--sans);fill:var(--stage-ink)}.ds-sv .chg{stroke:#e9a26a;stroke-dasharray:3 2}.ds-sv text.c{fill:#e9a26a}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Fabrication Drawing",
+    "overview": "The page is a fabrication drawing for the printer, not a SaaS form. A pale, cool drafting-film sheet carries the settings in ruled sections like the notes column of a drawing; beside it the 3D model sits on a soldermask-green stage with a drawing title block in its corner and a to-scale Z section band along its foot. Every number on the sheet is measured from the user's files, and the type says so: measured values, filenames and Z heights are set in a monospace, everything else in a single grotesque.\n\nDensity is that of a CAM tool: 14px body, 1px hairlines between sections, tight square controls, no cards, no shadows. Colour is restrained to graphite on film with one copper accent for the action and the current selection; the stage is the only large dark field and it stays dark in both themes, because the model is the subject.\n\nThe confirmed rejection is the centered upload card with a gradient \"Generate\" button, and more broadly anything that reads as generic AI-generated design (the user's explicit brand commitment).",
+    "keyCharacteristics": [
+      "Drafting-film ground, graphite ink, 1px hairline rules between sections.",
+      "One copper accent for the primary action, links and focus; nothing else in the chrome is warm.",
+      "Soldermask-green stage in both themes, with drawing furniture (view tools, title block, section band) in stage inks.",
+      "Archivo for words, JetBrains Mono only for measured numbers, filenames and Z heights.",
+      "Square controls (2px corners); circles only where the physical thing is round (filament chips, the spinner).",
+      "Flat: depth is hairlines and tone, never shadow."
+    ],
+    "rules": [
+      {
+        "name": "The One Copper Rule",
+        "body": "Copper is the only warm colour in the UI chrome. It marks the one primary action, links, focus and selection. The model and the user's filament swatches on the stage are data, not chrome, and are exempt.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stage Stays Dark Rule",
+        "body": "The soldermask stage is dark in light and dark themes alike. Anything drawn on it uses the soldermask inks, never the page inks.",
+        "section": "colors"
+      },
+      {
+        "name": "The Measured-Values-Only Rule",
+        "body": "JetBrains Mono appears only on numbers measured from the files, filenames and Z heights. Words, including words inside those tables, stay in Archivo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Wide-Face Rule",
+        "body": "The expanded width (wdth 125) is loaded only at weight 600 and is used only for naming the drawing: brand, title-block title, section heading, empty-stage line. Any inline aside inside those resets to wdth 100.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Structure is drawn with 1px lines, hairline for internal division, hairline-strong for structural edges. Thicker strokes are reserved for state: the 2px copper focus ring and the 3px copper frame of the file drop veil.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** separate sections with 1px hairlines and keep the panel free of cards and fills.",
+      "**Do** keep copper to the one primary action, links, focus and selection in the chrome.",
+      "**Do** set every measured number, filename and Z height in JetBrains Mono with tabular figures, and only those.",
+      "**Do** use 2px corners on every control and container; use circles only for filament chips and the spinner.",
+      "**Do** draw stage furniture in the soldermask inks on translucent soldermask so it reads as part of the drawing.",
+      "**Do** keep the stage dark in both themes and move the title block below the canvas at ≤820px.",
+      "**Do** honour prefers-reduced-motion: the only motion is the spinner and the disclosure chevron."
+    ],
+    "donts": [
+      "**Don't** build a centered upload card with a gradient \"Generate\" button.",
+      "**Don't** add box-shadows; depth is tone and hairlines.",
+      "**Don't** introduce a second accent hue in the chrome or use copper decoratively.",
+      "**Don't** set words, labels or headings in the monospace.",
+      "**Don't** use the expanded Archivo width at weights other than 600 or for running text."
+    ]
+  }
+}
